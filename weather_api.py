@@ -21,27 +21,19 @@ def format_response(weather_json):
 
 
 def get_weather(city):
-    weather_key = 'edffd1bf975a74d5d10e58c5ac8be2d3'
+    weather_key = '#####################'
     url = 'https://api.openweathermap.org/data/2.5/weather'
-    params = {'APPID': 'edffd1bf975a74d5d10e58c5ac8be2d3', 'q': city, 'units':'imperial'}
+    params = {'APPID': '##############', 'q': city, 'units':'imperial'}
     response = requests.get(url, params=params)
     print(response.json())
     weather_json = response.json()
 
     results['text'] = format_response(response.json())
 
-    #icon_name = weather_json['weather'][0]['icon']
-    #open_image(icon_name)
 
-#def open_image(icon):
-    #size = int(lower_frame.winfo_height()*0.25)
-    #img = ImageTk.PhotoImage(Image.open('./img/'+icon+'.png').resize((size, size)))
-    #weather_icon.delete("all")
-    #weather_icon.create_image(0,0, anchor='nw', image=img)
-    #weather_icon.image = img
 
 C = tk.Canvas(app, height=HEIGHT, width=WIDTH)
-#background_label.place(x=0, y=0, relwidth=1, relheight=1)
+
 
 C.pack()
 
@@ -65,5 +57,4 @@ results.config(font=40, bg=bg_color)
 results.place(relwidth=1, relheight=1)
 app.mainloop()
 
-#weather_icon = tk.Canvas(results, bg=bg_color, bd=0, highlightthickness=0)
-#weather_icon.place(relx=.75, rely=0, relwidth=1, relheight=0.5)
+
